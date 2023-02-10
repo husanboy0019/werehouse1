@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:x="urn:schemas-microsoft-com:office:excel">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <xml>
+        <x:ExcelWorkBook>
+            <x:ExcelWorksheets>
+                <x:ExcelWorksheet>
+                    <x:Name>Products Report</x:Name>
+                    <x:WorksheetOptions>
+                        <x:DisplayGridlines/>
+                    </x:WorksheetOptions>
+                </x:ExcelWorksheet>
+            </x:ExcelWorksheets>
+        </x:ExcelWorkBook>
+    </xml>
+
+    <style>
+        body {
+            font-family: Calibri;
+            font-size: 11pt;
+        }
+
+        th {
+            font-weight: bold;
+            font-size: 14pt;
+        }
+
+        td, th {
+            border: 1px solid #e0e5e7;
+            padding-right: 10pt;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<table style="width:100%">
+    #* Table Header *#
+    <tr>
+        <th class="text-center">№</th>
+        <th class="text-center">Name</th>
+        <th class="text-center">Category</th>
+        <th class="text-center">UnitType</th>
+    </tr>
+
+    #* Table Body *#
+
+    #foreach($product in $list)
+
+        <tr>
+            <td class="text-right">$product.id</td>
+            <td class="text-right">$product.name</td>
+            <td class="text-right">$product.category.name</td>
+            <td class="text-right">$product.unitType</td>
+        </tr>
+
+    #end
+
+</table>
+
+</body>
+</html>
